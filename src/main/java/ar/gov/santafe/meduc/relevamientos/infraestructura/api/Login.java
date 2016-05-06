@@ -10,6 +10,7 @@ import ar.gov.santafe.meduc.relevamientos.infraestructura.security.JsonWebToken;
 import ar.gov.santafe.meduc.relevamientos.infraestructura.security.JsonWebTokenJOSE;
 import ar.gov.santafe.meduc.relevamientos.infraestructura.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.ws.rs.Consumes;
@@ -51,8 +52,13 @@ public class Login {
     
     @POST
     @Path("/validar")
-    public Response validarToken(String token) {
+    @Produces(MediaType.TEXT_PLAIN)    
+    public Response validarToken(String tokenParam) {
+        String token = "";
         try {            
+            ObjectMapper mapper = new ObjectMapper();
+            ObjectNode root = (ObjectNode) mapper.readTree(tokenParam);
+            token=root.get("token").asText();
             System.out.println(jwt.verificarDigesto(token));
             String payload = jwt.verificarDigesto(token);
             System.out.println("====> CARGA");

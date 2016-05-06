@@ -75,15 +75,18 @@ angular.module('relInfra')
                         });
                     return deffered.promise;
                 }
-                var _validar = function(user,pass){
+                var _validar = function(){
+                    console.log(_element);
                     var deffered = $q.defer();
-                    $http.post(urlBase+"auth/validar",_element).
+                    $http.post(urlBase+"auth/validar",{token:_element}).
                         success(function(data, status, headers, config) {
-				    console.log(data) ;
-				    deffered.resolve();
+				            console.log(data) ;
+				            deffered.resolve();
                         }).
                         error(function(data, status, headers, config) {
                             console.log(data);
+                            console.log(status);
+                            console.log(headers);
                         });
                     return deffered.promise;
                 }
@@ -95,4 +98,3 @@ angular.module('relInfra')
                 validar: _validar
             }        
 }]);
-    
