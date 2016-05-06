@@ -30,6 +30,8 @@
                   console.log("LISTO");
                   console.log(loginService.digesto());
                   loginService.validar();
+                  //this.$router.navigate(['CuadroA', {pass: txtMd5}]);
+                  $ctrl.$router.navigate(['CuadroA']);                  
               }
             );
             
