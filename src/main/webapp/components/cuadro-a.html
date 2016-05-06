@@ -1,0 +1,72 @@
+  <main >
+    <div class="page-content">
+
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col mdl-cell--middle ">2</div>
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">Sevicios basicos</div>
+  <div class="mdl-cell mdl-cell--6-col">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col " >Disponibilidad</div>      
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col">En el predio</div>      
+        <div class="mdl-cell mdl-cell--4-col">En la zona</div>      
+        <div class="mdl-cell mdl-cell--4-col">Distancia</div>      
+    </div>
+  </div>
+</div>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col">{{$ctrlCuadroA.cuadro.datos[0].texto}}</div>      
+    <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-11">
+            <input type="checkbox" id="switch-11" class="mdl-switch__input" checked ng-model="$ctrlCuadroA.cuadro.datos[0].enPredio">
+            <span class="mdl-switch__label"></span>
+        </label>
+    </div>      
+    <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-12">
+            <input type="checkbox" id="switch-12" class="mdl-switch__input" checked ng-model="$ctrlCuadroA.cuadro.datos[0].enZona">
+            <span class="mdl-switch__label"></span>
+        </label>
+    </div>      
+    <div class="mdl-cell mdl-cell--2-col">
+        <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2" ng-model="$ctrlCuadroA.cuadro.datos[0].distancia">
+        <label class="mdl-textfield__label" for="sample2">Number...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+    </div>         
+</div>
+
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col">{{$ctrlCuadroA.cuadro.datos[1].texto}}</div>      
+    <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-21">
+            <input type="checkbox" id="switch-21" class="mdl-switch__input" checked ng-model="$ctrlCuadroA.cuadro.datos[1].enPredio">
+            <span class="mdl-switch__label"></span>
+        </label>
+    </div>      
+    <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-22">
+            <input type="checkbox" id="switch-22" class="mdl-switch__input" checked ng-model="$ctrlCuadroA.cuadro.datos[1].enZona">
+            <span class="mdl-switch__label"></span>
+        </label>
+    </div>      
+    <div class="mdl-cell mdl-cell--2-col">
+        <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2" ng-model="$ctrlCuadroA.cuadro.datos[1].distancia">
+        <label class="mdl-textfield__label" for="sample2">Number...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+    </div>         
+</div>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col mdl-cell--middle ">
+  <button class="mdl-button mdl-js-button mdl-button--primary" ng-click="$ctrlCuadroA.guardar()">
+  Guardar
+</button>
+  </div>
+
+
+    </div>
+  </main>

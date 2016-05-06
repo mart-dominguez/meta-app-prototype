@@ -1,0 +1,18 @@
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col " >Acceso Usuarios</div>      
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--6-col">Usuario</div>      
+      <div class="mdl-cell mdl-cell--6-col"><input ng-model="$loginCtrl.usuario.userName"></div>      
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--6-col">Password</div>      
+      <div class="mdl-cell mdl-cell--6-col"><input ng-model="$loginCtrl.usuario.password"></div>      
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <button class="mdl-button mdl-js-button mdl-button--primary" ng-click="$loginCtrl.guardar()">
+            Guardar
+        </button>
+      </div>
+    </div>    
