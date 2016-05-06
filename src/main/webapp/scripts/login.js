@@ -10,8 +10,7 @@
             usuario: '@',
             $router: '<' 
     },
-    controller: ['loginService','md5',function (loginService,md5) {
-      console.log(loginService);
+      controller: ['$window','loginService','md5',function ($window,loginService,md5) {
       var $ctrl = this;
 
       this.$routerOnActivate = function(next) {
@@ -28,14 +27,12 @@
             loginService.autenticar(this.usuario.userName,txtMd5).then(
                 function(){
                   console.log("LISTO");
-                  console.log(loginService.digesto());
-                  loginService.validar();
+                  $window.localStorage.setItem('token',loginService.digesto());
                   //this.$router.navigate(['CuadroA', {pass: txtMd5}]);
-                  $ctrl.$router.navigate(['CuadroA']);                  
+                  $ctrl.$router.navigate(['CuadroA']);
               }
             );
             
-            //this.$router.navigate(['CuadroA', {pass: txtMd5}]);
         };
     }],
     controllerAs: '$loginCtrl'

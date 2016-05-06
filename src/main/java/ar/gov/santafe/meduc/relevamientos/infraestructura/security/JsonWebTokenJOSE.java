@@ -46,18 +46,24 @@ public class JsonWebTokenJOSE implements JsonWebToken{
     }
 
     public String verificarDigesto(String digesto) {
+        String user[] = null;
         String carga = null;
         try {
             JsonWebEncryption jwe = new JsonWebEncryption();
             jwe.setKey(tknProvider.getKey());
             jwe.setCompactSerialization(digesto);
-            System.out.println("Payload: " + jwe.getPayload());
             carga = jwe.getPayload();
+            user= carga.split("\\|");
+            
+            System.out.println("Payload: " + carga );            
+            System.out.println("User: " + user );
         } catch (JoseException ex) {
             Logger.getLogger(JsonWebTokenJOSE.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
         }
-        return carga;
+        return user[0];
     }
+    
+      
 
 }
