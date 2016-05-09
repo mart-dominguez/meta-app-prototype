@@ -47,11 +47,24 @@ angular.module('relInfra')
 			});
 			return deffered.promise;
             }
+            var _findOne = function(api,id){
+                var deffered = $q.defer();
+			$http.get(urlBase+api+"/"+id).
+			success(function(data, status, headers, config) {
+				_element= data;
+				deffered.resolve();
+			}).
+			error(function(data, status, headers, config) {
+				console.log(data);
+			});
+			return deffered.promise;
+            }
             return{
                 add: _add,
                 update: _upd,
                 remove: _del,
                 search : _query,
+                findOne : _findOne,
                 getList : function(){
                     return _list;
                 },
@@ -97,4 +110,4 @@ angular.module('relInfra')
                 },
                 validar: _validar
             }        
-}]);
+}])

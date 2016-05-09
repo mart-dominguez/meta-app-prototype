@@ -6,6 +6,7 @@
 package ar.gov.santafe.meduc.relevamientos.infraestructura.service;
 
 import ar.gov.santafe.meduc.relevamientos.infraestructura.modelo.Cuadro;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -16,5 +17,6 @@ import javax.ejb.Local;
 public interface CuadroLogica {
     public Cuadro guardar(Cuadro c);
     public Cuadro get(Integer id);
+    public List<Cuadro> listar();
 
 }

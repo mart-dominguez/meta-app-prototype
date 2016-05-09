@@ -29,7 +29,7 @@
                   console.log("LISTO");
                   $window.localStorage.setItem('token',loginService.digesto());
                   //this.$router.navigate(['CuadroA', {pass: txtMd5}]);
-                  $ctrl.$router.navigate(['CuadroA']);
+                  $ctrl.$router.navigate(['Resumen']);
               }
             );
             

@@ -49,6 +49,7 @@ angular.module('relInfra')
             templateUrl:'components/app.html',
             $routeConfig: [
                 {path: '/login', name: 'Login', component: 'login', useAsDefault: true},
+                {path: '/resumen', name: 'Resumen', component: 'resumen'},
                 {path: '/cuadro1', name: 'CuadroA', component: 'cuadroA'}
             ]
         });

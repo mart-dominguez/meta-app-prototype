@@ -46,11 +46,7 @@ public class SecurityTokenFilter implements Filter {
                 System.out.println("Token:"+token);
                 System.out.println("User :"+x);
                 System.out.println("Verificar :"+x.equalsIgnoreCase("mdominguez"));
-                if(x.equalsIgnoreCase("mdominguez"))  {
-                    chain.doFilter(request, response);
-                }else{
-                    throw new ServletException("Unauthorized: No Authorization header was found");
-                }
+                chain.doFilter(request, response);
             }else{
                 chain.doFilter(request, response);
             }

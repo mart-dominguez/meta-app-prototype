@@ -64,4 +64,12 @@ public class Planilla {
         String json = mapper.writeValueAsString(cuadroService.get(idplanilla));
         return Response.ok(json, MediaType.APPLICATION_JSON).build();
     }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response listarCuadros() throws IOException{ 
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(cuadroService.listar());
+        return Response.ok(json, MediaType.APPLICATION_JSON).build();
+    }
 }

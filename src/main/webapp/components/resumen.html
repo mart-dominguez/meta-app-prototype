@@ -1,0 +1,21 @@
+<main >
+    <h2>{{$ctrl.titulo}}</h2>
+    <div class="page-content">
+        <table class="mdl-data-table mdl-shadow--2dp">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">Cuadro</th>
+              <th class="mdl-data-table__cell--non-numeric">ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="cuadro in $ctrl.cuadros">          
+              <td class="mdl-data-table__cell--non-numeric">{{cuadro.titulo}}</td>
+              <td class="mdl-data-table__cell--non-numeric">
+                <a ng-link="['CuadroA', {cuadro: cuadro.id}]">{{cuadro.id}}</a>
+              </td>
+            </tr>    
+          </tbody>
+        </table>
+    </div>
+</main>

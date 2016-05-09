@@ -6,6 +6,7 @@
 package ar.gov.santafe.meduc.relevamientos.infraestructura.service;
 
 import ar.gov.santafe.meduc.relevamientos.infraestructura.modelo.Cuadro;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -31,5 +32,10 @@ public class CuadroLogicaJpa implements CuadroLogica{
     public Cuadro get(Integer id) {
         return em.find(Cuadro.class,id);
     }
-    
+
+
+    @Override
+    public List<Cuadro> listar() {
+        return em.createQuery("SELECT c FROM Cuadro c").getResultList();
+    }    
 }
